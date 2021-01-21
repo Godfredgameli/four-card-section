@@ -23,7 +23,7 @@ $font-light: 200;
 $font-normal: 400;
 $font-bold: 600;
 
-
+/*Page styling*/
 body,html{
     box-sizing: border-box;
     margin: 0;
@@ -34,7 +34,7 @@ body,html{
     font-weight: $font-normal;
 }
 
-
+/*Main container styling*/
 .main-wrapper{
     width: 100%;
     height: 96vh;
@@ -42,7 +42,7 @@ body,html{
     justify-content: center;
     align-items: center;
 
-
+/*Page content container*/
     .content-wrapper{
         width: 90%;
         height: 95%;
@@ -51,7 +51,7 @@ body,html{
         justify-content: space-between;
         align-items: stretch;
 
-
+/*Header section styling*/
         .header-wrapper{
             height: 25%;
             display: flex;
@@ -60,51 +60,33 @@ body,html{
 
 
             .header{
-                width: 43%;
+                width: 50%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 
                 .header-light{
-                    height: 33%;
-                    width: 80%;
-                    font-size: 30px;
                     color: $grayish-blue;
                     font-weight: $font-bold;
                     
-                    p{
-                        margin: 0;
-                    }
                 }
                 .header-dark{
-                    height: 33%;
-                    width: 80%;
-                    font-size: 30px;
                     color: $dark-blue;
                     font-weight: $font-bold;
 
-                    p{
-                        margin: 0;
-                    }
                 }
                 .header-decription{
-                   height: 33%;
-                   width: 100%;
+                    margin: 0 50px;
                     text-align: center;
                     color: $grayish-blue;
                     font-weight: $font-normal;
-
-                    p{
-                        margin: 0;
-                    }
-
                     
                 }
 
             }
         }
-
+/*Product and their description section styling*/
         .products-wrapper{
             display: flex;
             justify-content: space-evenly;
@@ -133,31 +115,29 @@ body,html{
                     
                     .title{
                         width: 90%;
-                        height: 50%;
-
-
-                        h2{
-                            margin-top: 0;
-                            color: $dark-blue;
-                            font-weight: bold;
-                        }
-                        p{
-                            color: $grayish-blue;
-                            font-weight: $font-light;
-                            
-                            
-                        }
-
+                        color: $dark-blue;
+                        font-weight: bold; 
+                        line-height: 1;  
+                        font-size: 18.72px;  
+                    }
+                    p{
+                        width: 90%;
+                        color: $grayish-blue;
+                        font-weight: $font-light;
+                        margin-top: 0 ;  
+                        line-height: 1;    
                     }
                     .icon{
                         width: 100%;
-                        height: 35%;
-                        margin-top: 20px;
+                        height: 30%;
+                        margin: 0;
+                        
 
                         .icon-image{
                             float: right;
-                            height: 80%;
-                            margin-right: 5%;
+                            height: 50px;
+                            width: 50px;
+                            margin: 5%;
                         }
                     }
                 }
@@ -193,7 +173,7 @@ body,html{
         }
     }
 }
-
+/*Footer section styling*/
 footer{
     height: 2vh;
     padding: 0;
@@ -210,35 +190,60 @@ footer{
     }
 }
 
-@media screen and (max-width:$mobile){
+/*Responsiveness for tablets and medium screens 800px and below*/
+@media screen and (max-width: 800px){
     .main-wrapper{
         height: 100%;
+
         .content-wrapper{
+            width: 100%;
+            .header-wrapper{
+                margin-bottom: 50px;
+                .header{
+                    width: 80%;
+                }
+            }
+        }
+        .products-wrapper{
+            margin-bottom: 50px;
+
+            .product{
+                width: 32%;
+            }
+        }
+    }
+}
+
+
+
+/*Responsive for smartphones and small screens 500px and below*/
+@media screen and (max-width:500px){
+    .main-wrapper{
+        height: 100%;
+        width: 100%;
+        .content-wrapper{
+            height: 100%;
+            width: 90%;
             .header-wrapper{
                 height: 200px;
                 margin-top: 50px;
                 .header{
                     width: 100%;
+                    
 
-                    .header-light{
-                        width: 100%;
-                        font-size: 25px;
-                    }
-
-                    .header-dark{
-                        width: 100%;
-                        font-size: 25px;
-                        line-height: 0.5;
+                    .header-decription{
+                        margin: 0;
                     }
                 }
             }
             .products-wrapper{
+                width: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: stretch;
                 height: 1072px;
-                margin: 50px 0;
+                margin-bottom: 50px;
 
 
                 .product{
@@ -261,6 +266,21 @@ footer{
                 }
                 .third{
                     height: 250px;
+                }
+            }
+        }
+    }
+    
+}
+/*Responsiveness for very very small screens 280px and below*/
+@media screen and (max-width:280px){
+    .main-wrapper{
+        .content-wrapper{
+            .header-wrapper{
+                .header{
+                    h1{
+                        font-size: 20px;
+                    }
                 }
             }
         }
